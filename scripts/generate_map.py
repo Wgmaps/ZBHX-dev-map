@@ -6,7 +6,7 @@ from folium.plugins import Search
 import gpxpy
 
 def generate_map_for_folder(gpx_folder):
-    m = folium.Map(location=[22.626, 120.315], zoom_start=15)
+    m = folium.Map(location=[24.8388, 121.0081], zoom_start=17)
 
     merchant_layer = folium.FeatureGroup(name="🛍️ 特約商家")
     m.add_child(merchant_layer)
