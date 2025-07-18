@@ -1,4 +1,3 @@
-
 import os
 import json
 import folium
@@ -69,3 +68,15 @@ def generate_map_for_folder(gpx_folder):
     output_file = os.path.join(gpx_folder, "index.html")
     m.save(output_file)
     print(f"✅ 地圖已儲存至: {output_file}")
+
+if __name__ == "__main__":
+    folder = "2025-07"
+    print(f"🚀 開始產圖 for 資料夾：{folder}")
+    if not os.path.exists(folder):
+        print(f"❌ 找不到資料夾：{folder}")
+    else:
+        gpx_files = [f for f in os.listdir(folder) if f.endswith(".gpx")]
+        print(f"📂 發現 GPX 檔案：{gpx_files}")
+        if not gpx_files:
+            print("⚠️ 沒有 GPX 檔案可處理")
+        generate_map_for_folder(folder)
